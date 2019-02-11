@@ -10,7 +10,13 @@ public class LoopFun
        * @return the factorial of the number
        */
       public Integer factorial(Integer number){
-          return null;
+        Integer answer = 1;
+        
+        for (int i = 1; i <= number; i++) {
+            answer = answer*i;
+        }
+        
+        return answer;
       }
 
       /**
@@ -21,8 +27,18 @@ public class LoopFun
        * @return Upper case string of the first letter of each word
        */
       public String acronym(String phrase) {
-          return null;
+          String answer = "";
+          String[] newArray = phrase.split(" ");
+          
+          
+          
+          
+          
+          //in googling, found working answer via regex expressions, want to answer via loops
+          //answer commented out below
+          //return phrase.replaceAll("\\B.|\\P{L}", "").toUpperCase();
       }
+     
 
       /**
        * To prevent anyone from reading our messages, we can encrypt it so it will only be readable by its
@@ -37,6 +53,17 @@ public class LoopFun
        * @return the encrypted string by shifting each character by three character
        */
       public String encrypt(String word) {
-          return null;
+          String alphabet = "abcdefghijklmnopqrstuvwxyz";
+          word = word.toLowerCase();
+          String encrypted = "";
+          
+          for (int i = 0; i < word.length(); i++) {
+            int charPosition = alphabet.indexOf(word.charAt(i));
+            int moveVal = (charPosition + 3) % 26;
+            char replaceVal = alphabet.charAt(moveVal);
+            encrypted += replaceVal;
+            }
+          
+          return encrypted;
       }
 }

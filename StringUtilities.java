@@ -65,7 +65,7 @@ public class StringUtilities {
                 answer.deleteCharAt(i);
             }
         }
-        
+        // Second test appears it may be wrong
         return answer.toString();
     }
 
