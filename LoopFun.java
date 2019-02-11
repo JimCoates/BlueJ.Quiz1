@@ -27,16 +27,15 @@ public class LoopFun
        * @return Upper case string of the first letter of each word
        */
       public String acronym(String phrase) {
-          String answer = "";
-          String[] newArray = phrase.split(" ");
-          
-          
-          
-          
-          
-          //in googling, found working answer via regex expressions, want to answer via loops
-          //answer commented out below
-          //return phrase.replaceAll("\\B.|\\P{L}", "").toUpperCase();
+            String answer = "";
+            char[] phraseArray = phrase.toCharArray();
+            answer += phraseArray[0];
+            for (int i = 0; i < phraseArray.length; i++){
+              if(phraseArray[i] == (' ')){
+                  answer += phraseArray[i+1];
+                }  
+            }
+            return answer.toUpperCase();
       }
      
 
